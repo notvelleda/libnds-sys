@@ -22,10 +22,9 @@ fn panic(info: &core::panic::PanicInfo) -> ! {
             }
         }
 
-        // TODO: is there a way to detect if this has already been called?
-        /*unsafe {
+        unsafe {
             crate::arm9_bindings::consoleDemoInit();
-        }*/
+        }
 
         let (file, line) = match info.location() {
             Some(loc) => (loc.file(), loc.line()),
